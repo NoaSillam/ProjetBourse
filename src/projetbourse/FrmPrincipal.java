@@ -258,7 +258,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 
                // double montantTrader = ( valeAQte - prixAQte );
                 
-                double montantTrader = ((act.getQteAcheter() * act.getQteAcheter())-(act.getPrixAcheter() * act.getQteAcheter()));
+                double montantTrader = ((act.getValeurActuelle() * act.getQteAcheter())-(act.getPrixAcheter() * act.getQteAcheter()));
                 montantTrader ++;
                // montantTrader = montantTrader + 1;
                 
