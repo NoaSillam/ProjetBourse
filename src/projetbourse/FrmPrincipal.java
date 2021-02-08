@@ -330,6 +330,20 @@ public class FrmPrincipal extends javax.swing.JFrame {
                   
                  // tblActions.setText(String.valueOf(txtQuantiteVendue - act.getValeurActuelle()));
                 }
+                
+                
+                if(tblActions.getSelectedRowCount() == 0)
+                {
+                    JOptionPane.showMessageDialog(this, "Selectionner une action");
+                }
+               if(txtQuantiteVendue.getText().compareTo("")==0)
+        {
+            JOptionPane.showMessageDialog(this,"veuillez saisir une quantité");
+        }
+                
+                   
+                
+                
             }
         }
         
