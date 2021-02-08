@@ -248,14 +248,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 dtmActions.addRow(v);
                 
                 
-                double valeAQte = (act.getQteAcheter())*(act.getQteAcheter());
+             //  int qteAcheter = act.getQteAcheter();
+              // qteAcheter++;
+              // int 
+                
+                
+             //  double valeAQte = (act.getValeurActuelle())*(act.getQteAcheter());
                
-                double prixAQte = (act.getPrixAcheter())*(act.getQteAcheter());
+              //  double prixAQte = (act.getPrixAcheter())*(act.getQteAcheter());
                 
                 
-                double montantTrader = ( valeAQte - prixAQte );
-               // double montantTrader = ((act.getValeurActuelle()*act) - (act.getPrixAcheter() * act.getQteAcheter()));
-                montantTrader++;
+               // double montantTrader = ( valeAQte - prixAQte );
+                
+               double montantTrader = ((act.getQteAcheter() * act.getQteAcheter())-(act.getPrixAcheter() * act.getQteAcheter()));
+               montantTrader ++;
+               // montantTrader = montantTrader + 1;
+                
                 
              
                 lblPortefeuille.setText(String.valueOf(montantTrader));
@@ -285,9 +293,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                for(Action act : trad.getMesActions())
             {
                 
+                
+                
                  int numAction = Integer.parseInt( tblActions.getValueAt(tblActions.getSelectedRow(), 0).toString());
+                   
                  
-                double montantTrader = (act.getValeurActuelle() - act.getPrixAcheter()) * act.getQteAcheter();
+                 
+                double montantTrader = (act.getValeurActuelle() - act.getPrixAcheter());
             if(montantTrader > 0){
                
                 
@@ -321,8 +333,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 int quantiteAcheter = Integer.parseInt( tblActions.getValueAt(tblActions.getSelectedRow(), 4).toString());
                 
                 if(quantiteAcheter == 0)
+                    
                 {
-                    dtmActions.getDataVector().removeAllElements();
+                    double montant = (act.getQteAcheter()*act.getValeurActuelle() - act.getQteAcheter()*act.getPrixAcheter());
                     
                 }
                 else
@@ -337,9 +350,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Selectionner une action");
                 }
                if(txtQuantiteVendue.getText().compareTo("")==0)
-        {
-            JOptionPane.showMessageDialog(this,"veuillez saisir une quantité");
-        }
+             {
+                 JOptionPane.showMessageDialog(this,"veuillez saisir une quantité");
+             }
+               if(txtQuantiteVendue.getText().compareTo("") > act.getQteAcheter())
+               {
+                     JOptionPane.showMessageDialog(this,"Vous ne pouvez pas vendre plus que ce que vous possédez");
+                }
                 
                    
                 
