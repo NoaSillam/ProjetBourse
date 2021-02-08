@@ -351,6 +351,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
                  int qte = act.getQteAcheter() - txtQuantiteVendue;
                 txtQuantiteVendue.setText(String.valueOf(qte));
                  
+                
+                
                     
                 }
                 
