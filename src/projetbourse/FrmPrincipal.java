@@ -248,9 +248,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 dtmActions.addRow(v);
                 
                 
-             //  int qteAcheter = act.getQteAcheter();
-              // qteAcheter++;
-              // int 
+             
                 
                 
              //  double valeAQte = (act.getValeurActuelle())*(act.getQteAcheter());
@@ -260,11 +258,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 
                // double montantTrader = ( valeAQte - prixAQte );
                 
-               double montantTrader = ((act.getQteAcheter() * act.getQteAcheter())-(act.getPrixAcheter() * act.getQteAcheter()));
-               montantTrader ++;
+                double montantTrader = ((act.getQteAcheter() * act.getQteAcheter())-(act.getPrixAcheter() * act.getQteAcheter()));
+                montantTrader ++;
                // montantTrader = montantTrader + 1;
                 
+               
+               
+               //double montantTrader =( act.getValeurActuelle() - act.getPrixAcheter())* act.getQteAcheter();
                 
+               
+               
              
                 lblPortefeuille.setText(String.valueOf(montantTrader));
             }
@@ -343,10 +346,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
                 else
                 {
-                double montant =  (act.getQteAcheter() * (act.getQteAcheter()-txtQuantiteVendue) )-(act.getPrixAcheter() * (act.getQteAcheter() - txtQuantiteVendue));
-                 // tblActions.setText(String.valueOf(txtQuantiteVendue - act.getValeurActuelle()));
+               double montant =  (act.getQteAcheter() * (act.getQteAcheter()-txtQuantiteVendue) )-(act.getPrixAcheter() * (act.getQteAcheter() - txtQuantiteVendue));
+                        // tblActions.setText(String.valueOf(txtQuantiteVendue - act.getValeurActuelle()));
                  int qte = act.getQteAcheter() - txtQuantiteVendue;
-                 txtQuantiteVendue.setText(String.valueOf(qte));
+                txtQuantiteVendue.setText(String.valueOf(qte));
                  
                     
                 }
