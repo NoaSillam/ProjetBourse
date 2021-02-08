@@ -325,11 +325,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
         // A vous de jouer
         dtmActions.getDataVector().removeAllElements();
         
+        
+        
         for (Trader trad: mesTraders)
         {
             for (Action act: trad.getMesActions())
                 
             {
+                 double montantTrader = ((act.getQteAcheter() * act.getQteAcheter())-(act.getPrixAcheter() * act.getQteAcheter()));
                 int quantiteAcheter = Integer.parseInt( tblActions.getValueAt(tblActions.getSelectedRow(), 4).toString());
                 
                 if(quantiteAcheter == 0)
@@ -340,14 +343,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
                 else
                 {
-                  
+                double montant =  (act.getQteAcheter() * (act.getQteAcheter()-txtQuantiteVendue) )-(act.getPrixAcheter() * (act.getQteAcheter() - txtQuantiteVendue));
                  // tblActions.setText(String.valueOf(txtQuantiteVendue - act.getValeurActuelle()));
+                 int qte = act.getQteAcheter() - txtQuantiteVendue;
+                 txtQuantiteVendue.setText(String.valueOf(qte));
+                 
+                    
                 }
                 
                 
                 if(tblActions.getSelectedRowCount() == 0)
                 {
-                    JOptionPane.showMessageDialog(this, "Selectionner une action");
+                     JOptionPane.showMessageDialog(this,"Selectionner une action");
                 }
                if(txtQuantiteVendue.getText().compareTo("")==0)
              {
