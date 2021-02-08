@@ -346,18 +346,14 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
                 else
                 {
-               double montant =  (act.getQteAcheter() * (act.getQteAcheter()-txtQuantiteVendue) )-(act.getPrixAcheter() * (act.getQteAcheter() - txtQuantiteVendue));
+             //  double montant =  (act.getQteAcheter() * (act.getQteAcheter()-txtQuantiteVendue) )-(act.getPrixAcheter() * (act.getQteAcheter() - txtQuantiteVendue));
                         // tblActions.setText(String.valueOf(txtQuantiteVendue - act.getValeurActuelle()));
-                 int qte = act.getQteAcheter() - txtQuantiteVendue;
-                txtQuantiteVendue.setText(String.valueOf(qte));
+              //   int qte = act.getQteAcheter() - txtQuantiteVendue;
+              //  txtQuantiteVendue.setText(String.valueOf(qte));
                  
+                   
                 
-                
-                    
-                }
-                
-                
-                if(tblActions.getSelectedRowCount() == 0)
+                 if(tblActions.getSelectedRowCount() == 0)
                 {
                      JOptionPane.showMessageDialog(this,"Selectionner une action");
                 }
@@ -370,6 +366,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
                      JOptionPane.showMessageDialog(this,"Vous ne pouvez pas vendre plus que ce que vous possédez");
                 }
                 
+                
+                }
+                
+                
+              
                    
                 
                 
